@@ -1,0 +1,107 @@
+
+
+Security Group and Keypairs
+Create key pair
+Name
+Vprofile-bean-key	
+File format
+Pem file
+Crate keypair
+Create security group 
+
+Security group name
+vprofile-backend-SG
+Description
+Security group for blackened services
+Add Rule
+Inbound rules
+
+Type			Prot range		source		
+Custom TPC		22			My IP	 
+
+Create Security Group
+
+Edit Inbound rule
+
+Type			Prot range		source		
+All traffic		All			All		vprofile-bean-SG
+
+Save Changes
+
+RDS (Managed Relational Database Service)
+Subnet groups
+
+Create DB subnet group
+Name
+vprofile-rds-sub-grp
+Description
+vprofile-rds-sub-grp
+VPC
+Default VPC
+
+Availability Zones
+Select all Avibility Zones
+Subnets
+All subnest
+
+Create
+
+Parameter groups
+
+Create Parameter Group	
+Parameter group family
+ select mysql8.0
+Type 
+DB Parameter Group
+Group name 
+vprofile-rds-para-grp
+Description
+vprofile-rds-para-grp
+
+Create
+Databases
+
+Create database
+MySql
+
+Templates
+Free Tier
+Availability and durability
+Single DB instance
+
+Settings
+DB instance identifier
+vprofile-rds-mysql
+Master username
+admin
+Auto generate a password (put a check mark)
+
+Instance configuration
+Burstable classes
+Toggle the switch 
+Include previous generation classes 
+db.t2.micro
+
+Storage
+Storage Type
+General purpose SSD (gp2)
+Allocated storage
+20
+
+Connectivity
+Exciting VPC groups 
+vprofile-backend-SG
+
+Monitoring
+Enable Enhanced monitoring
+
+Additional configuration
+Initioal datavase name
+accounts
+DB parameter group
+vprofile-rds-para-grp
+Log exports
+Check all logs
+
+Create database
+After you created the database in view credential details. Copy the master password and save it on sticky note.
